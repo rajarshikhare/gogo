@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"gogo/priorityqueue"
-	"gogo/queue"
-	"gogo/stack"
+
+	"github.com/rajarshikhare/gogo/priorityqueue"
+	"github.com/rajarshikhare/gogo/queue"
+	"github.com/rajarshikhare/gogo/stack"
 )
 
 func main() {
