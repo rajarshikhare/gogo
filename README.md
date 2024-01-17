@@ -1,6 +1,6 @@
 ## Overview
 
-The GoGo Data Structures Package is a comprehensive collection of generic data structures implemented in Go. This package includes implementations of Stack, Queue, and PriorityQueue, each designed to be efficient, flexible, and easy to use. These data structures are fundamental in many algorithms and are essential for efficient data management and processing.
+The GoGo Data Structures Package is a comprehensive collection of generic data structures implemented in Go. This package includes implementations of Stack, Queue, PriorityQueue, and AVL Tree, each designed to be efficient, flexible, and easy to use. These data structures are fundamental in many algorithms and are essential for efficient data management and processing.
 
 ## Data Structures
 
@@ -22,6 +22,12 @@ The GoGo Data Structures Package is a comprehensive collection of generic data s
    - **Key Methods**: `Enqueue`, `Dequeue`, `Peek`, `IsEmpty`, `Size`, `Clear`, `String`.
    - **Usage**: Perfect for scenarios where elements need to be processed based on priority rather than just the order of addition.
 
+### 4. AVL Tree
+   - **Package Path**: `github.com/rajarshikhare/gogo/avltree`
+   - **Description**: A self-balancing binary search tree ensuring O(log n) time complexity for insertion and deletion.
+   - **Key Methods**: `Insert`, `Delete`, `Get`.
+   - **Usage**: Effective for maintaining sorted data with efficient insertion, deletion, and search operations.
+
 ## Installation
 
 To use any of these data structures in your Go project, import the respective package:
@@ -30,7 +36,7 @@ To use any of these data structures in your Go project, import the respective pa
 import "github.com/rajarshikhare/gogo/[data_structure]"
 ```
 
-Replace `[data_structure]` with `stack`, `queue`, or `priorityqueue` as needed.
+Replace `[data_structure]` with `stack`, `queue`, `priorityqueue`, or `avltree` as needed.
 
 ## Examples
 
@@ -53,6 +59,16 @@ fmt.Println(q.Dequeue())
 pq := priorityqueue.New[int](func(a, b int) bool { return a < b })
 pq.Enqueue(10)
 fmt.Println(pq.Dequeue())
+```
+
+### AVL Tree
+```go
+tree := avltree.New[int](comparator, isEqual)
+tree.Insert(10)
+node := tree.Get(10)
+if node != nil {
+	fmt.Println("Node found:", node.data)
+}
 ```
 
 ## Contributing
